@@ -16,7 +16,7 @@ export default function StoreItem(props) {
                         <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >{props.condition}</span>
                             <img src={img} className="img-fluid product-image justify" alt=""/>
                             <p className=" text-lg-left phone-name mb-0">{props.name}</p>
-                            <p className="text-lg-left phone-status-storage mb-1">${props.status} | {props.storage}</p>
+                            <p className="text-lg-left phone-status-storage mb-1">{props.status} | {props.storage}</p>
                             <p className=" text-lg-left unit-price-label mb-0">Unit price</p>
                             <p className=" text-lg-left price mb-0">${props.price}</p>
                             <p className="small text-lg-left availability-label">1500 Available</p>
