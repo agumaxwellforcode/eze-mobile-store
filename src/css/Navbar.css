@@ -16,3 +16,18 @@
     color: #ffffff;
     text-transform: uppercase;
   }
+
+  @media only screen and (max-width: 600px) {
+    .intro {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem!important;
+        text-align: center !important;
+    }
+    .btnsearch{
+        margin-top: 10px !important;
+        font-size: 0.7rem;
+    }
+    .side-bar{
+        display: none;
+    }
+  }

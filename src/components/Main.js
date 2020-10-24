@@ -7,8 +7,8 @@ export default function Main() {
     return (
         // <>
           
-                <div className="row m-0 main-panel" id="main-panel">
-                       <div className="col-lg-2 col-md-3 side-bar">
+                <div className="row m-0 main-pane" id="main-pane">
+                       <div className="col-lg-2 col-md-3 side-bar"  id="side-bar">
                             <div className="card bg-transparent border-0 text-left">
                                 <div className="card-body pl-0">
                                     <h6 className="card-title">Categories</h6>
@@ -20,7 +20,7 @@ export default function Main() {
                                         <li className="list-group-item">MacBook</li>
                                         <li className="list-group-item">Airpods</li>
                                     </ul>
-                                    <h6 className="card-title">Price Filtter</h6>
+                                    <h6 className="card-title mb-5">Price Filtter</h6>
                                     <form>
                                         <div className="form-group mb-1">
                                             <input type="text" className="form-control input-sm" id="min" placeholder="Min"/>
@@ -31,28 +31,225 @@ export default function Main() {
                                         </div>
                                         
                                     </form>
+                                    <h6 className="card-title mt-5">Storage</h6>
+                                    <ul className="list-group list-group-flush bg-transparent mb-4">
+                                        <li className="list-group-item"> 
+                                            <div className="form-check">
+                                                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                                                <label className="form-check-label mt-1" for="exampleCheck1">32GB</label>
+                                            </div>
+                                        </li>
+                                        <li className="list-group-item"> 
+                                            <div className="form-check">
+                                                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                                                <label className="form-check-label mt-1" for="exampleCheck1">64GB</label>
+                                            </div>
+                                        </li>
+                                        <li className="list-group-item"> 
+                                            <div className="form-check">
+                                                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                                                <label className="form-check-label mt-1" for="exampleCheck1">128GB</label>
+                                            </div>
+                                        </li>
+                                        <li className="list-group-item"> 
+                                            <div className="form-check">
+                                                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                                                <label className="form-check-label mt-1" for="exampleCheck1">256GB</label>
+                                            </div>
+                                        </li>
+                                       
+                                    </ul>
                                 </div>
                             </div>
                        </div>
-                       <div className="col-lg-9 col-md-6">
+                       <div className="col-lg-10 col-md-9 main-panel" id="main-panel">
                         <div className="row m-0">
-                            <div className="col-xl-2 col-lg-3 col-md-3">
-                            <div className="card product-card" >
-                                <div className="card-body  p-2">
-                                <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark" >A1</span>
-                                    <img src="/phones/11-pro.png" className="img-fluid " alt=""/>
-                                    <p className=" text-left phone-name mb-0">iPhone 7</p>
-                                    <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
-                                    <p className=" text-left unit-price-label mb-0">Unit price</p>
-                                    <p className=" text-left price mb-0">$450</p>
-                                    <p className="small text-left">1500 Available</p>
-                                    <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
-                                </div>
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image justify" alt=""/>
+                                        <p className=" text-lg-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-lg-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-lg-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-lg-left price mb-0">$450</p>
+                                        <p className="small text-lg-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0  mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0  mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card p-0" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card mb-3" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5 mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card p-0" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-xl-2 col-lg-3 col-md-3 pt-0 mb-5">
+                                <div className="card product-card mb-3" >
+                                    <div className="card-body  p-2">
+                                    <span className="float-right  pl-2 pr-2 pt-0 pb-0 small border bg-dark product-condition" >A1</span>
+                                        <img src="/phones/11-pro.png" className="img-fluid product-image " alt=""/>
+                                        <p className=" text-left phone-name mb-0">iPhone 7</p>
+                                        <p className="text-left phone-status-storage mb-1">Unlocked | 256GB</p>
+                                        <p className=" text-left unit-price-label mb-0">Unit price</p>
+                                        <p className=" text-left price mb-0">$450</p>
+                                        <p className="small text-left availability-label">1500 Available</p>
+                                        <button  className="btn btn-primary btn-sm pl-4 pr-4 mb-3">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+                                    <a href="#" className="mobile-filter-button">
+                                        <i className="fa fa-plus mobile-filter-button-icon"></i>
+                                    </a>
                         </div>
                        </div>
                     </div>
+                   
         // </>
     )
 }
