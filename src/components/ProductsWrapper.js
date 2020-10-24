@@ -16,19 +16,28 @@ export default function ProductsWrapper () {
         console.log('mounted')
         setLoading(true)
         let res;
-        let page;
-        let limit;
+        let page = 1; // set default pagination to one
+        let limit = 12; // set default number of elements to twelve
+
 
         try {
-            res = await axios.get('http://eze-backend-api.herokuapp.com/api/iphones/buy2?page=1&limit=12') 
+            res = await axios.get('http://eze-backend-api.herokuapp.com/api/iphones/buy2?page='+page+'&limit='+limit+'') 
             console.log(res.data.data)
             setLoading(false)
             setProducts(res.data.data.results) // might be res.data.phones or whatever, depending on the structure of the data returned from the api.
+
+            // Pagination
+            
+          
 
         } catch (error) {
             setLoading(false)
             console.log(error)
         }
+    }
+
+    function paginateNext(){
+
     }
 
     return (
@@ -50,16 +59,14 @@ export default function ProductsWrapper () {
             })}
             <nav aria-label="Page navigation example  ">
                 <ul className="pagination bg-dark border-dark mr-lg-3 ">
-                    <li className="page-item ">
+                    <li className="page-item " >
                     <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                         <span className="sr-only">Previous</span>
                     </a>
                     </li>
-                    <li className="page-item "><a className="page-link bg-dark border-dark text-white small" href="#">1</a></li>
-                    <li className="page-item"><a className="page-link bg-dark border-dark text-white small" href="#">2</a></li>
-                    <li className="page-item"><a className="page-link bg-dark border-dark text-white small" href="#">3</a></li>
-                    <li className="page-item">
+                  
+                    <li className="page-item" onClick={paginateNext}>
                     <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                         <span className="sr-only">Next</span>
