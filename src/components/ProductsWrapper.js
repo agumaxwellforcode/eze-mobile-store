@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
+
+
 
 import '../css/products_wrapper.css'
 
@@ -9,6 +11,7 @@ export default function ProductsWrapper () {
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false)
+    useEffect(() => console.log('mounted'), []);
 
     async function getProducts() {
         setLoading(true)
@@ -16,7 +19,8 @@ export default function ProductsWrapper () {
 
         try {
 
-            res = await axios.get('/url-endpoint-to-get-products-data', {withCredentials: true}) //withCredentials is set to true in case you're using cookies, else you can remove it
+            res = await axios.get('http://eze-backend-api.herokuapp.com/api/iphones/sell2') 
+            console.log(res)
             setLoading(false)
             setProducts(res.data) // might be res.data.phones or whatever, depending on the structure of the data returned from the api.
 
@@ -35,11 +39,10 @@ export default function ProductsWrapper () {
                     <div key={index} className='product-item'>
                         <StoreItem 
                             name={product.name}
-                            name={product.condition}
-                            unlocked={product.storage}
-                            amount={product.price}
-                            available={product.status}
-                            qty={product.quantity}
+                            condition={product.condition}
+                            storage={product.storage}
+                            price={product.price}
+                            status={product.status}
                             img={product.image}
                         /> 
                         {/* add the necessary props */}
