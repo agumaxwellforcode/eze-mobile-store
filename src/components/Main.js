@@ -57,7 +57,16 @@ export default function Main() {
                                                 <label className="form-check-label mt-1" for="exampleCheck1">256GB</label>
                                             </div>
                                         </li>
-                                       
+                                        <div className="dropdown">
+                                            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Dropdown button
+                                            </button>
+                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a className="dropdown-item" href="#">Action</a>
+                                                <a className="dropdown-item" href="#">Another action</a>
+                                                <a className="dropdown-item" href="#">Something else here</a>
+                                            </div>
+                                        </div>
                                     </ul>
                                 </div>
                             </div>
@@ -243,8 +252,8 @@ export default function Main() {
                                     </div>
                                 </div>
                             </div>
-                                    <a href="#" className="mobile-filter-button">
-                                        <i className="fa fa-plus mobile-filter-button-icon"></i>
+                                    <a className="mobile-filter-button" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        <i className="fa fa-ellipsis-v mobile-filter-button-icon"></i>
                                     </a>
                         </div>
                        </div>

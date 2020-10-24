@@ -16,6 +16,15 @@
     color: #ffffff;
     text-transform: uppercase;
   }
+  .more-options{
+    background-color: #1e242f;
+    /* max-width: 20rem; */
+    /* float: right; */
+    /* overflow-y: scroll; */
+}
+.mobile-filter{
+    display: none;
+}
 
   @media only screen and (max-width: 600px) {
     .intro {
@@ -29,5 +38,12 @@
     }
     .side-bar{
         display: none;
+    }
+    .more-options{
+        background-color: #1e242f;
+        max-width: 100% !important;
+    }
+    .mobile-filter{
+        display: block;
     }
   }

@@ -23,15 +23,34 @@ export default class Navbar extends Component {
                                         <input type="text" className="form-control small" id="search" placeholder="Enter search term (e.g iphone x, 128Gb or A1)" required></input>
                                     </div>
                                     <div className="col-sm-4 pl-lg-0 ">
-                                        <button className="btn btn-outline-white btn-md my-0 ml-sm-2 btnsearch small ml-lg-0 " type="submit"> Search <i class="fa fa-long-arrow-right" aria-hidden="true"></i> </button>
+                                        <button className="btn btn-outline-white btn-md my-0 ml-sm-2 btnsearch small  float-lg-left " type="submit"> Search <i className="fa fa-long-arrow-right" aria-hidden="true"></i> </button>
                                     </div>
                                 </div>
                                 </form>
                             </div>
                         </div>
                        </div>
-                       <div className="col-lg-6 col-md-6">
-                      
+                       <div className="col-lg-6 col-md-6 ">
+                           <div className="row m-0 justify-content-lg-end">
+                            <div className="collapse mt-3 col-sm-12 col-lg-6 col-md-6" id="collapseExample">
+                                    <div className="card card-body more-options">
+                                    <form className="mobile-filter">
+                                    <h6 className="card-title mb-3">Price Filtter</h6>
+                                        <div className="form-group mb-1">
+                                            <input type="text" className="form-control input-sm" id="min" placeholder="Min"/>
+                                        </div>
+                                        <p className="h6 text-center">|</p>
+                                        <div className="form-group mt-2">
+                                            <input type="text" className="form-control  input-sm" id="max" placeholder="Max"/>
+                                        </div>
+                                        
+                                    </form>
+                                    <h6 className="card-title small mt-sm-3">More Options</h6>
+                                    <button type="button" class="btn btn-primary btn-sm">Load iPhones</button>
+                                    </div>
+                                </div>
+                           </div>
+                           
                        </div>
                     </div>
                 </nav>
