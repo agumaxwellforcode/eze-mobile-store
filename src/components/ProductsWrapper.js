@@ -1,7 +1,5 @@
 import React, { useState , useEffect } from 'react'
 
-
-
 import '../css/products_wrapper.css'
 
 import axios from 'axios'
@@ -11,32 +9,33 @@ export default function ProductsWrapper () {
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false)
-    useEffect(() => console.log('mounted'), []);
+    useEffect(() => 
+    getProducts(), []);
 
     async function getProducts() {
+        console.log('mounted')
         setLoading(true)
         let res;
+        let page;
+        let limit;
 
         try {
-
-            res = await axios.get('http://eze-backend-api.herokuapp.com/api/iphones/sell2') 
-            console.log(res)
+            res = await axios.get('http://eze-backend-api.herokuapp.com/api/iphones/buy2?page=1&limit=12') 
+            console.log(res.data.data)
             setLoading(false)
-            setProducts(res.data) // might be res.data.phones or whatever, depending on the structure of the data returned from the api.
+            setProducts(res.data.data.results) // might be res.data.phones or whatever, depending on the structure of the data returned from the api.
 
         } catch (error) {
-
             setLoading(false)
             console.log(error)
-
         }
     }
 
     return (
-        <div className='products-wrapper'>
+        <div className='row m-0 justify-content-end '>
             {products.map((product, index) => {
                 return (
-                    <div key={index} className='product-item'>
+                    <div key={index} className='col-xl-2 col-lg-3 col-md-3 pt-0 mb-5'>
                         <StoreItem 
                             name={product.name}
                             condition={product.condition}
@@ -49,6 +48,25 @@ export default function ProductsWrapper () {
                     </div>
                 )
             })}
+            <nav aria-label="Page navigation example  ">
+                <ul className="pagination bg-dark border-dark mr-lg-3 ">
+                    <li className="page-item ">
+                    <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span className="sr-only">Previous</span>
+                    </a>
+                    </li>
+                    <li className="page-item "><a className="page-link bg-dark border-dark text-white small" href="#">1</a></li>
+                    <li className="page-item"><a className="page-link bg-dark border-dark text-white small" href="#">2</a></li>
+                    <li className="page-item"><a className="page-link bg-dark border-dark text-white small" href="#">3</a></li>
+                    <li className="page-item">
+                    <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span className="sr-only">Next</span>
+                    </a>
+                    </li>
+                </ul>
+                </nav>
         </div>
     )
 }
