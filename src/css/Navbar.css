@@ -1,14 +1,15 @@
-.header-container{
+/* .header-container{
     display: flex;
     justify-content: space-between;
-    margin: 0 5rem;
-}
+    margin: 0.5rem;
+} */
 .header-container h1{
     text-transform: uppercase;
     line-height: 3.2rem;
     width: 60%;
     padding-top: 1rem;
     text-align: left;
+    font-weight: bold;
 }
 .btnsearch {
     background-color: var(--mainBlue);

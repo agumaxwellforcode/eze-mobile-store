@@ -34,11 +34,11 @@ export default function ProductsWrapper () {
                 return (
                     <div key={index} className='product-item'>
                         <StoreItem 
-                            type={product.type}
                             name={product.name}
+                            name={product.condition}
                             unlocked={product.storage}
                             amount={product.price}
-                            available={product.available}
+                            available={product.status}
                             qty={product.quantity}
                             img={product.image}
                         /> 
