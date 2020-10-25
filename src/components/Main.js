@@ -2,8 +2,8 @@ import React from 'react'
 import Filter from './Filter'
 import ProductsWrapper from './ProductsWrapper'
 import '../css/main.css';
-import axios from 'axios'
-import StoreItem from './StoreItem'
+// import axios from 'axios'
+
 
 export default function Main() {
 
@@ -68,7 +68,12 @@ export default function Main() {
                        </div>
                        <div className="col-lg-10 col-md-9 main-panel" id="main-panel">
                        <ProductsWrapper />
-                        
+                       
+                       
+                            <a className="mobile-filter-button shadow" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <i className="fa fa-ellipsis-v mobile-filter-button-icon"></i>
+                            </a>
+                  
                        </div>
                     </div>
                    
