@@ -89,10 +89,10 @@ export default function ProductsWrapper () {
         } else {
             priceQuery = "" // empty query if parameters are not available
         }
-        console.log('http://eze-backend-api.herokuapp.com/api/iphones/buy2?page='+page+'&limit='+limit+''+cleanParams)
+        console.log('http://eze-backend-api.herokuapp.com/api/iphones/buy2?page='+page+'&limit='+limit+''+cleanParams+''+cleanPriceParams)
 
         try {
-            await axios.get('http://eze-backend-api.herokuapp.com/api/iphones/buy2?page='+page+'&limit='+limit+''+cleanParams)  //String list = Arrays.toString(customers.toArray()).replace("[", "").replace("]", "");
+            await axios.get('http://eze-backend-api.herokuapp.com/api/iphones/buy2?page='+page+'&limit='+limit+''+cleanParams+''+cleanPriceParams)  //String list = Arrays.toString(customers.toArray()).replace("[", "").replace("]", "");
 
             .then(res => {
                 console.log(res)
@@ -112,7 +112,7 @@ export default function ProductsWrapper () {
     }
 if (products) {
     return (
-        <div className='row m-0 justify-content-end '>
+        <div className='row m-0 justify-content-start '>
             {products.map((product, index) => {
                 return (
                     <div key={index} className='col-xl-2 col-lg-3 col-md-3 pt-0 mb-5'>
@@ -128,23 +128,26 @@ if (products) {
                     </div>
                 )
             })}
-            <nav aria-label="Page navigation example  ">
-                <ul className="pagination bg-dark border-dark mr-lg-3 ">
-                    <li className="page-item " >
-                    <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span className="sr-only">Previous</span>
-                    </a>
-                    </li>
-                  
-                    <li className="page-item" >
-                    <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span className="sr-only">Next</span>
-                    </a>
-                    </li>
-                </ul>
+            
+             {/* <div className='row m-0 justify-content-start '>
+                <nav aria-label="Page navigation example  ">
+                    <ul className="pagination bg-dark border-dark mr-lg-3 ">
+                        <li className="page-item " >
+                        <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span className="sr-only">Previous</span>
+                        </a>
+                        </li>
+                    
+                        <li className="page-item" >
+                        <a className="page-link bg-dark border-dark text-white small" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span className="sr-only">Next</span>
+                        </a>
+                        </li>
+                    </ul>
                 </nav>
+            </div> */}
         </div>
     )
 } else {
