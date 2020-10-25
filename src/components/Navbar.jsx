@@ -32,7 +32,7 @@ export default class Navbar extends Component {
   }
 
   render() {
-    const { searchParams } = this.state;
+    const { searchParams } = this.props.store;
     return (
       <div className="header-container row m-0 p-0 mb-lg-5">
         <nav className="col-12 p-0 mb-4">
