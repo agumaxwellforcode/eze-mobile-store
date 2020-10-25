@@ -20,7 +20,7 @@ export default function ProductsWrapper () {
         let limit = 12; // set default number of elements to twelve
         
         let priceParameters = {max:'900', min:'100'} //declare payload of price query parameters
-        let queryParameters = "a1,64gb"
+        let queryParameters = "iphone xr,a1,64gb"
 
         let query = []           //declare payload of query parameters
         let priceQuery = []      //declare payload of query parameters
@@ -110,7 +110,7 @@ export default function ProductsWrapper () {
             console.log(error)
         }
     }
-if (products) {
+if (products.length !== 0) {
     return (
         <div className='row m-0 justify-content-start '>
             {products.map((product, index) => {
@@ -152,10 +152,9 @@ if (products) {
     )
 } else {
     return (
-        <div className="alert  bg-dark col-10">
-              
-        <strong>Oops!</strong> No product matches your search
-    </div>
+        <div className="alert  bg-dark col-12">    
+            <strong>Oops!</strong> No product matches your search
+        </div>
         
     )
 }
