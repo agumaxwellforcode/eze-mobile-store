@@ -15,7 +15,6 @@ export default class Main extends Component {
 
         }
     }
-
   handleMinChange = (e) => {
     console.log(e.target.value);
     this.setState({
