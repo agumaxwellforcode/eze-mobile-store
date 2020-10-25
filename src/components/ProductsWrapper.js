@@ -4,6 +4,7 @@ import '../css/products_wrapper.css'
 
 import axios from 'axios'
 import StoreItem from './StoreItem'
+import Navbar from './Navbar'
 
 export default function ProductsWrapper () {
 
@@ -14,13 +15,14 @@ export default function ProductsWrapper () {
 
     async function getProducts() {
         console.log('mounted')
+        // console.log(this.state.search_value)
         // setLoading(true)
        
         let page = 1; // set default pagination to one
         let limit = 12; // set default number of elements to twelve
         
         let priceParameters = {max:'900', min:'100'} //declare payload of price query parameters
-        let queryParameters = "iphone xr,a1,64gb"
+        let queryParameters = "iphone xs,a1,64gb"
 
         let query = []           //declare payload of query parameters
         let priceQuery = []      //declare payload of query parameters

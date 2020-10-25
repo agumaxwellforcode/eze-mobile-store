@@ -17,7 +17,12 @@ export default class Navbar extends Component {
     constructor(props){
         super(props)
         this.state = {
-            searchParams : ''
+            search_value : "",
+            price :{
+                min : "",
+                max : ""
+            }
+
         }
     }
    handleSubmit = (event) =>{
@@ -26,15 +31,13 @@ export default class Navbar extends Component {
         console.log(params)
         this.props.handleData(this.state)
    }
-   handleInputChange = (event) =>{
-    event.preventDefault()
-    console.log(event.target.value)
-    this.setState ({
-        [event.target.name]:event.target.value
-    })
+   
+  handleChange(e) {
+    this.setState({ comment: e.target.value });
   }
     
     render() {
+       
         const {searchParams} = this.state
         return (
             <div className="header-container row m-0 p-0 mb-lg-5">
@@ -51,7 +54,7 @@ export default class Navbar extends Component {
                                <form onSubmit={this.handleSubmit}>
                                     <div className="form-group row">
                                         <div className="col-sm-8 pr-lg-0">
-                                            <input type="text" className="form-control small search"  onChange={this.handleInputChange}  name="searchParams" id="search" placeholder="Enter search term (e.g iphone x, 128Gb or A1)" required></input>
+                                            <input type="text" className="form-control small search"  name="searchParams" id="search" placeholder="Enter search term (e.g iphone x, 128Gb or A1)" required></input>
                                         </div>
                                         <div className="col-sm-4 pl-lg-0 ">
                                             <button className="btn btn-outline-white btn-md my-0 ml-sm-2 btnsearch small  float-lg-left " type="submit" > Search <i className="fa fa-long-arrow-right" aria-hidden="true"></i> </button>
