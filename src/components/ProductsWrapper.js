@@ -48,7 +48,7 @@ export default function ProductsWrapper () {
                     (queryParameters[i].toLowerCase()).includes('c') || 
                     (queryParameters[i].toLowerCase()).includes('c/b') || 
                     (queryParameters[i].toLowerCase()).includes('c/d')) {
-					query.push('&condition='+queryParameters[i]); // push the parameter to the list and attach the query key
+					query.push('&condition='+queryParameters[i]); // push the parameter to the list and attach the query ke
 				}
 				else if((queryParameters[i].toLowerCase()).includes('64gb') || 
                     (queryParameters[i].toLowerCase()).includes('256gb') || 
