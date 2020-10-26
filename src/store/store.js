@@ -6,9 +6,14 @@ import { buildUrl } from "../utils/cleaner";
 export default class PhonesStore {
   phones = [];
   initial_data_retrieved = false;
+  price = {
+    min: 100,
+    max: 900,
+  };
 
   constructor() {
     makeObservable(this, {
+      price: observable,
       phones: observable,
       initial_data_retrieved: observable,
       set_data: action,
@@ -16,7 +21,9 @@ export default class PhonesStore {
       startcall: action,
       retrievePhones: computed,
       dataRetrieved: computed,
+      retrievePriceRange: computed,
       searchPhones: action,
+      setPrice: action
     });
   }
 
@@ -37,8 +44,8 @@ export default class PhonesStore {
       });
     this.initial_data_retrieved = true;
   };
-  searchPhones = (search_param, price_param) => {
-    let url = buildUrl(search_param, price_param);
+  searchPhones = (search_param) => {
+    let url = buildUrl(search_param, this.price);
     axios
       .get(url)
       .then((res) => {
@@ -48,6 +55,13 @@ export default class PhonesStore {
         console.log(err);
       });
   };
+  setPrice = (price_object) => {
+    console.log(price_object);
+    this.price = price_object;
+  };
+  get retrievePriceRange() {
+    return this.price;
+  }
   get retrievePhones() {
     return this.phones;
   }

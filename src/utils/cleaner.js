@@ -45,7 +45,7 @@ function searchToQueryparams(queryParameters) {
   return cleanParams;
 }
 
-function priceToQueryParams(priceParameters = { max: "900", min: "100" }) {
+function priceToQueryParams(priceParameters = { max: "400", min: "100" }) {
   let priceQuery = [];
   let cleanPriceParams = "";
   if (priceParameters !== "") {
@@ -60,7 +60,7 @@ function priceToQueryParams(priceParameters = { max: "900", min: "100" }) {
     } else if (priceParameters.max === "" && priceParameters.min !== "") {
       priceQuery.push("&max=1000000"); // Assigned $1000000 as none of the products is up to a $1000000, preferably, the highest price in the table can be returned and used instead but i am short of time
       priceQuery.push("&min=" + priceParameters.min);
-    } else if (priceParameters.max == !"" && priceParameters.min === "") {
+    } else if (priceParameters.max !== "" && priceParameters.min === "") {
       priceQuery.push("&max=" + priceParameters.max);
       priceQuery.push("&max=1"); // Assigned $1 as none of the products is less than $1, preferably, the lowest price in the table can be returned and used instead
     } else {
