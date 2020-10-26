@@ -18,8 +18,8 @@ class Main extends React.Component {
   }
   state = {
     price: {
-      min: 0,
-      max: 0,
+      min: "",
+      max: "",
     },
   };
 

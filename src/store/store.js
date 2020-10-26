@@ -7,8 +7,8 @@ export default class PhonesStore {
   phones = [];
   initial_data_retrieved = false;
   price = {
-    min: 100,
-    max: 900,
+    min: "",
+    max: "",
   };
 
   constructor() {
