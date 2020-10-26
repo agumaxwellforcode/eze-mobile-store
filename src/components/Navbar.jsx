@@ -38,7 +38,12 @@ export default class Navbar extends Component {
   render() {
     const { searchParams } = this.props.store;
     return (
-      <div className="header-container row m-0 p-0 mb-lg-5">
+      <div className="header-container row m-0 p-0 mb-lg-5" style={{  
+        backgroundImage: 'url(/src/image/screens-Image.png)',
+        backgroundPosition: 'right top',
+        backgroundSize: '20em 15em',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <nav className="col-12 p-0 mb-4">
           <div className="row justify-content-center m-0">
             <div className="col-lg-6 col-md-6">
