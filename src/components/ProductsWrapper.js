@@ -22,7 +22,7 @@ export default function ProductsWrapper () {
 		let limit = 12;                                                     // set default number of elements to twelve
         
 		let priceParameters = {max:'900', min:'100'};                        //declare payload of price query parameters
-		let queryParameters = 'iphone xs,a1,64gb';
+		let queryParameters = 'iphone xs,64gb';
 
 		let query = [];                                                      //declare payload of query parameters
 		let priceQuery = [];                                                 //declare payload of query parameters
@@ -51,6 +51,7 @@ export default function ProductsWrapper () {
 					query.push('&condition='+queryParameters[i]); // push the parameter to the list and attach the query key
 				}
 				else if((queryParameters[i].toLowerCase()).includes('64gb') || 
+					(queryParameters[i].toLowerCase()).includes('128gb') || 
                     (queryParameters[i].toLowerCase()).includes('256gb') || 
                     (queryParameters[i].toLowerCase()).includes('512gb')) {
 					query.push('&storage='+queryParameters[i]); // push the parameter to the list and attach the query key

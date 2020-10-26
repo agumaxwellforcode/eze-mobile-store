@@ -15,20 +15,24 @@ async function loadIphone() {
 export default class Navbar extends Component {
   state = {
     search_value: "",
-    price: {
       min: "",
-      max: "",
-    },
+      max: ""
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
     const { searchPhones } = this.props.store;
-    searchPhones(this.state.search_value);
+    searchPhones(this.state.search_value, this.state.min, this.state.max);
   };
-
   handleChange(e) {
     this.setState({ search_value: e.target.value });
+  }
+
+  handleMinChange(e) {
+    this.setState({ min: e.target.value });
+  }
+  handleMaxChange(e) {
+    this.setState({ max: e.target.value });
   }
 
   render() {
@@ -94,6 +98,8 @@ export default class Navbar extends Component {
                           name="min"
                           id="minPrice"
                           placeholder="Min"
+                          value={this.state.min}
+                          onChange={this.handleMinChange.bind(this)}
                         />
                       </div>
                       <p className="h6 text-center">|</p>
@@ -104,6 +110,8 @@ export default class Navbar extends Component {
                           name="max"
                           id="maxPrice"
                           placeholder="Max"
+                          value={this.state.max}
+                          onChange={this.handleMaxChange.bind(this)}
                         />
                       </div>
                     </form>
