@@ -22,9 +22,8 @@ export default class Navbar extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { searchPhones } = this.props.store;
-    searchPhones(this.state.search_value);
+    searchPhones(this.state.search_value, this.state.min, this.state.max);
   };
-
   handleChange(e) {
     this.setState({ search_value: e.target.value });
   }
@@ -42,10 +41,25 @@ export default class Navbar extends Component {
     });
   };
 
+  handleMinChange(e) {
+    this.setState({ min: e.target.value });
+  }
+  handleMaxChange(e) {
+    this.setState({ max: e.target.value });
+  }
+
   render() {
-    const { searchParams } = this.state;
+    const { searchParams } = this.props.store;
     return (
-      <div className="header-container row m-0 p-0 mb-lg-5">
+      <div
+        className="header-container row m-0 p-0 mb-lg-5"
+        style={{
+          backgroundImage: "url(/src/image/screens-Image.png)",
+          backgroundPosition: "right top",
+          backgroundSize: "20em 15em",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <nav className="col-12 p-0 mb-4">
           <div className="row justify-content-center m-0">
             <div className="col-lg-6 col-md-6">

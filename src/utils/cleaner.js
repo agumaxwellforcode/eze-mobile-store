@@ -12,24 +12,22 @@ function searchToQueryparams(queryParameters) {
       // Determine and map query strings to matching parameters if they match expectations
       // Convert all strings to lower case to narrow the mapping
 
-      if (queryParameters[i].toLowerCase().includes("phone")) {
-        query.push("&name=" + queryParameters[i]);
-      } else if (
-        queryParameters[i].toLowerCase().includes("a1") ||
-        queryParameters[i].toLowerCase().includes("a2") ||
-        queryParameters[i].toLowerCase().includes("b1") ||
-        queryParameters[i].toLowerCase().includes("b2") ||
-        queryParameters[i].toLowerCase().includes("c") ||
-        queryParameters[i].toLowerCase().includes("c/b") ||
-        queryParameters[i].toLowerCase().includes("c/d")
-      ) {
-        query.push("&condition=" + queryParameters[i]);
-      } else if (
-        queryParameters[i].toLowerCase().includes("64gb") ||
-        queryParameters[i].toLowerCase().includes("256gb") ||
-        queryParameters[i].toLowerCase().includes("512gb")
-      ) {
-        query.push("&storage=" + queryParameters[i]);
+      if ((queryParameters[i].toLowerCase()).includes('phone')) {
+        query.push('&name='+queryParameters[i]);
+      } else if((queryParameters[i].toLowerCase()).includes('a1') || 
+        (queryParameters[i].toLowerCase()).includes('a2') || 
+        (queryParameters[i].toLowerCase()).includes('b1') || 
+        (queryParameters[i].toLowerCase()).includes('b2') || 
+        (queryParameters[i].toLowerCase()).includes('c') || 
+        (queryParameters[i].toLowerCase()).includes('c/b') || 
+        (queryParameters[i].toLowerCase()).includes('c/d')) {
+        query.push('&condition='+queryParameters[i]); // push the parameter to the list and attach the query key
+      }
+      else if((queryParameters[i].toLowerCase()).includes('64') || 
+        (queryParameters[i].toLowerCase()).includes('128') || 
+        (queryParameters[i].toLowerCase()).includes('256') || 
+        (queryParameters[i].toLowerCase()).includes('512')) {
+        query.push('&storage='+queryParameters[i]); // push the parameter to the list and attach the query key
       }
     }
     cleanParams = query
