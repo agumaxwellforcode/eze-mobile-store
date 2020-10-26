@@ -13,43 +13,54 @@ async function loadIphone() {
 }
 
 export default class Navbar extends Component {
+  constructor(props) {
+    super(props)
+    this.store = props.store;
+    const {
+      searchPhones,
+      searchParams,
+      setPrice,
+      retrievePriceRange,
+    } = this.store;
+    this.searchPhones = searchPhones;
+    this.searchParams = searchParams;
+    this.setPrice = setPrice;
+    this.retrievePriceRange = retrievePriceRange;
+  }
   state = {
     search_value: "",
-    min: "",
-    max: "",
+    price: {
+      min: "",
+      max: "",
+    },
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { searchPhones } = this.props.store;
-    searchPhones(this.state.search_value, this.state.min, this.state.max);
+    this.searchPhones(this.state.search_value);
   };
   handleChange(e) {
     this.setState({ search_value: e.target.value });
   }
   handleMinChange = (e) => {
-    console.log(e.target.value);
-    this.setState({
+    let price_range = {
       min: e.target.value,
-    });
+      max: this.state.price.max,
+    };
+    this.setState({ price: price_range });
+    this.setPrice(price_range);
   };
 
   handleMaxChange = (e) => {
-    console.log(e.target.value);
-    this.setState({
+    let price_range = {
+      min: this.state.price.min,
       max: e.target.value,
-    });
+    };
+    this.setState({ price: price_range });
+    this.setPrice(price_range);
   };
 
-  handleMinChange(e) {
-    this.setState({ min: e.target.value });
-  }
-  handleMaxChange(e) {
-    this.setState({ max: e.target.value });
-  }
-
   render() {
-    const { searchParams } = this.props.store;
     return (
       <div
         className="header-container row m-0 p-0 mb-lg-5"
@@ -68,7 +79,7 @@ export default class Navbar extends Component {
                   <p className="text-left h2 text-uppercase font-weight-bold intro">
                     Shop our latest <br /> available stock here
                   </p>
-                  <p className="text-white">{searchParams}</p>
+                  <p className="text-white">{this.searchParams}</p>
                 </header>
                 <div className="col-12 pl-0">
                   <form onSubmit={this.handleSubmit}>

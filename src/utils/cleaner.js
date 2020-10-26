@@ -60,7 +60,7 @@ function priceToQueryParams(priceParameters = { max: "400", min: "100" }) {
       priceQuery.push("&min=" + priceParameters.min);
     } else if (priceParameters.max !== "" && priceParameters.min === "") {
       priceQuery.push("&max=" + priceParameters.max);
-      priceQuery.push("&max=1"); // Assigned $1 as none of the products is less than $1, preferably, the lowest price in the table can be returned and used instead
+      priceQuery.push("&min=1"); // Assigned $1 as none of the products is less than $1, preferably, the lowest price in the table can be returned and used instead
     } else {
       // If both are null/empty
       priceQuery = "";

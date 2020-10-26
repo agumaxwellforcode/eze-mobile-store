@@ -56,7 +56,6 @@ export default class PhonesStore {
       });
   };
   setPrice = (price_object) => {
-    console.log(price_object);
     this.price = price_object;
   };
   get retrievePriceRange() {
