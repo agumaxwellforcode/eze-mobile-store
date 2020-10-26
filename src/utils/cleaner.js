@@ -1,8 +1,14 @@
 function searchToQueryparams(queryParameters) {
-  let query = []; //declare payload of query parameters
 
-  let cleanParams = ""; // formated parameters ready to be passed to the query
+  let page = 1;                                                       // set default pagination to one
+	let limit = 12;                                                     // set default number of elements to twelve
+        
+	let priceParameters = {max:'900', min:'100'};
+  let query = [];                                                      //declare payload of query parameters
+
+  let cleanParams ='';                                                 // formated parameters ready to be passed to the query
   if (queryParameters !== "") {
+
     // check if there are query parameters
     queryParameters = queryParameters.split(","); // Break query parameters into elements
     var i;
@@ -15,6 +21,7 @@ function searchToQueryparams(queryParameters) {
       if (queryParameters[i].toLowerCase().includes("phone")) {
         query.push("&name=" + queryParameters[i]);
       } else if (
+        queryParameters[i].toLowerCase().includes("new") ||
         queryParameters[i].toLowerCase().includes("a1") ||
         queryParameters[i].toLowerCase().includes("a2") ||
         queryParameters[i].toLowerCase().includes("b1") ||
@@ -26,6 +33,7 @@ function searchToQueryparams(queryParameters) {
         query.push("&condition=" + queryParameters[i]);
       } else if (
         queryParameters[i].toLowerCase().includes("64gb") ||
+        queryParameters[i].toLowerCase().includes("128gb") ||
         queryParameters[i].toLowerCase().includes("256gb") ||
         queryParameters[i].toLowerCase().includes("512gb")
       ) {
@@ -93,9 +101,9 @@ export function buildUrl(
     page +
     "&limit=" +
     limit +
-    "" +
+    '' +
     search_params +
-    "" +
+    '' +
     price_params;
   return url;
 }
